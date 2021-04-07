@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvcStore.Data;
 using Microsoft.EntityFrameworkCore;
+using MvcStore.Repo;
+using MvcStore.Interface;
 
 namespace MvcStore
 {
@@ -28,6 +30,10 @@ namespace MvcStore
             services.AddControllersWithViews();
             services.AddDbContext<MvcStoreContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("MvcStoreContext")));
+            services.AddDbContext<StoreDBContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("StoreDBContext")));
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

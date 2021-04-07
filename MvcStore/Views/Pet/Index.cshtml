@@ -1,4 +1,4 @@
-@model IEnumerable<MvcStore.Models.Pet>
+@model MvcStore.Models.Cart
 @{double a = 0.0;}
 @{
     ViewData["Title"] = "Index";
@@ -8,7 +8,7 @@
 
 <p>
      <form asp-action="ShopView">
-    <input type="submit" value="Shop For Pets" class="btn btn-primary" /> 
+    <input type="submit" value="Shop For Items" class="btn btn-primary" /> 
 
     </form>
 </p>
@@ -16,16 +16,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                Price
             </th>
             <th>
                 Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Quantity)
+                Quantity
             </th>
             <th>
                 Total Price
@@ -33,13 +33,13 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.ShoppingCart) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.item.Price)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
@@ -48,9 +48,9 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </th>
             <th>
-                @(item.Quantity * item.Price)
+                @(item.Quantity * item.TotalPrice)
                 
-                @{a += item.Quantity * item.Price;}
+                @{a += item.Quantity * item.TotalPrice;}
             </th>
             <td>
                 &nbsp;
@@ -73,3 +73,4 @@
 </table>
 
 <tr>Your Session Total: $@a</tr>
+ 

@@ -8,30 +8,35 @@ using Microsoft.EntityFrameworkCore;
 using MvcStore.Data;
 using MvcStore.Models;
 using MvcStore.Repo;
+using MvcStore.Interface;
 
 namespace MvcStore.Controllers
 {
     public class PetController : Controller
     {
         private readonly MvcStoreContext _context;
+        private readonly IItemRepository _Ritem;
+        private readonly IShoppingCartRepository _cart;
 
-        public PetController(MvcStoreContext context)
+        public PetController(MvcStoreContext context, IItemRepository item, IShoppingCartRepository cart)
         {
             _context = context;
+            _Ritem = item;
+            _cart = cart;
         }
         private readonly PetRepo _PetRepo = new PetRepo();
         public IActionResult ShopView()
         {
-            var data = _PetRepo.GetAllPets();
- 
+            var data =  _Ritem.GetAllRepoItems();
             return View(data);
         } 
 
 
         // GET: Pet
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Pet.ToListAsync());
+            var data =  _cart.GetAllCartItems();
+            return View(data);
         }
 
         // GET: Pet/Details/5
@@ -56,9 +61,12 @@ namespace MvcStore.Controllers
         public IActionResult Create(int id) //this page is not showing and i am not sure why
         {
             
-            var data = _PetRepo.GetPet(id);
+            var data = _Ritem.GetRepoItemById(id);
+            CartItem temp = new CartItem();
+            temp.item = data;
+            temp.ItemId = data.Id;
 
-            return View(data);
+            return View(temp);
 
         }
 
@@ -67,21 +75,21 @@ namespace MvcStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("CreateConfirmed")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateConfrimed(int id, int Quantity)
+        public IActionResult CreateConfrimed(int id, int Quantity)
         {
-            if (_context.Pet.Find(id) != null)
+            if (_Ritem.GetRepoItemById(id) != null)
             {
-               var pet = _context.Pet.Find(id); 
-               pet.add_Quantity(Quantity);
-               await _context.SaveChangesAsync();
+               var item = _Ritem.GetRepoItemById(id); 
+                item.QuantitySold += Quantity;
+               _Ritem.SaveChanges();
                return RedirectToAction(nameof(Index));
             } 
             else
             {
-                var pet = _PetRepo.GetPet(id);
-                pet.add_Quantity(Quantity - 1);
-                _context.Pet.Add(pet);
-                await _context.SaveChangesAsync();
+                var item = _Ritem.GetRepoItemById(id);
+                item.QuantitySold += Quantity -1;
+                _cart.Add(item);
+                _cart.SaveChanges();
                 return RedirectToAction(nameof(Index));
             } 
         }

@@ -1,21 +1,25 @@
 using System.Collections.Generic;
 using System.Web;
 using MvcStore.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+using MvcStore.Interface;
 
 namespace MvcStore.Models
-{
-    public class Cart
+{    public class Cart
     {
-        public IEnumerable<Item> ShoppingCart {get; private set;}
-        public static readonly Cart CartInitial;
-
-        static Cart(){
-            CartInitial = new Cart();
-            CartInitial.ShoppingCart = new List<Item>();
+        [NotMapped]
+        public List<CartItem> ShoppingCart {get; set;}
+        private readonly IShoppingCartRepository _CartRepo;
+        public Cart(IShoppingCartRepository repository) {
+            _CartRepo = repository;
         }
-        public void AddItem(int ItemId){
-            Item item_new = new Item(ItemId);
+        public Cart(){
+            
         }
+        public void Add(CartItem toAdd){
+            ShoppingCart.Add(toAdd);
+        }
+        
 
     }
 }
