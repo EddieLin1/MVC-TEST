@@ -77,7 +77,7 @@ namespace MvcStore.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult CreateConfrimed(int id, int Quantity)
         {
-            if (_Ritem.GetRepoItemById(id) != null)
+            if (_cart.GetCartItemById(id) != null)
             {
                var item = _Ritem.GetRepoItemById(id); 
                 item.QuantitySold += Quantity;
