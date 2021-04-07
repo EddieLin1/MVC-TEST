@@ -19,6 +19,7 @@ namespace MvcStore.Repo
         {
             Cart _cart = new Cart();
             _cart.ShoppingCart = _context.ShoppingCart.ToList();
+            populate(_cart);
             return _cart;
         }
         public CartItem GetCartItemById(int id)
@@ -40,6 +41,11 @@ namespace MvcStore.Repo
         }
         public void SaveChanges(){
             _context.SaveChanges();
+        }
+        public void populate(Cart Cart){
+            foreach(CartItem item in Cart.ShoppingCart){
+                item.item = _context.ItemsRepo.Find(item.ItemId);
+            }
         }
             
         }

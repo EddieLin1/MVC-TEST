@@ -17,6 +17,9 @@ namespace MvcStore.Controllers
         private readonly MvcStoreContext _context;
         private readonly IItemRepository _Ritem;
         private readonly IShoppingCartRepository _cart;
+        private readonly PetRepo _PetRepo = new PetRepo();
+
+
 
         public PetController(MvcStoreContext context, IItemRepository item, IShoppingCartRepository cart)
         {
@@ -24,7 +27,7 @@ namespace MvcStore.Controllers
             _Ritem = item;
             _cart = cart;
         }
-        private readonly PetRepo _PetRepo = new PetRepo();
+
         public IActionResult ShopView()
         {
             var data =  _Ritem.GetAllRepoItems();
@@ -88,7 +91,7 @@ namespace MvcStore.Controllers
             {
                 var item = _Ritem.GetRepoItemById(id);
                 item.QuantitySold += Quantity -1;
-                _cart.Add(item);
+                _cart.Add(item, Quantity);
                 _cart.SaveChanges();
                 return RedirectToAction(nameof(Index));
             } 

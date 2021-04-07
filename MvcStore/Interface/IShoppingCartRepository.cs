@@ -14,8 +14,8 @@ namespace MvcStore.Interface
        // Task<IEnumerable<Cart>> GetAllCartItemsAsync();
         CartItem GetCartItemById(int id);
         Cart GetAllCartItems();
-        void Add(Item item);
-        CartItem item2CartItem(Item item);
+        void Add(Item item, int Quantity);
+        CartItem item2CartItem(Item item, int Quantity);
         void SaveChanges();
 
 
