@@ -1,0 +1,48 @@
+@model IEnumerable<MvcStore.Models.Item>
+
+@{
+    ViewData["Title"] = "StoreInventory";
+}
+
+<h1>This is where we can see what is in Stock</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Inventory Sold
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantitySold)
+            </td>
+                    
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index">Back to Cart</a>
+</div>

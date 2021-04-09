@@ -78,25 +78,39 @@ namespace MvcStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("CreateConfirmed")]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateConfrimed(int id, int Quantity)
+        public IActionResult CreateConfrimed(int ItemId, int Quantity)
         {
-            if (_cart.GetCartItemById(id) != null)
+            if(ModelState.IsValid)
             {
-               var item = _Ritem.GetRepoItemById(id); 
-                item.QuantitySold += Quantity;
-               _Ritem.SaveChanges();
-               return RedirectToAction(nameof(Index));
-            } 
+                if (_cart.GetCartItemById(ItemId) != null)
+                {
+                     var item = _Ritem.GetRepoItemById(ItemId); 
+                     item.QuantitySold += Quantity;
+                     _Ritem.SaveChanges();
+                      _cart.AddMore(ItemId, Quantity);
+                      _cart.SaveChanges();
+                      return RedirectToAction(nameof(Index));
+                } 
+                else
+                {
+                    var item = _Ritem.GetRepoItemById(ItemId);
+                    item.QuantitySold += Quantity;
+                    _cart.AddNew(item, Quantity);
+                    _Ritem.SaveChanges();
+                    _cart.SaveChanges();
+                    return RedirectToAction(nameof(Index));
+                } 
+            }
             else
             {
-                var item = _Ritem.GetRepoItemById(id);
-                item.QuantitySold += Quantity -1;
-                _cart.Add(item, Quantity);
-                _cart.SaveChanges();
                 return RedirectToAction(nameof(Index));
             } 
+             
+            
         }
-
+        
+        
+/*
         // GET: Pet/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -147,45 +161,56 @@ namespace MvcStore.Controllers
             }
             return View(pet);
         }
-
+*/
         // GET: Pet/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int id)
         {
-            if (id == null)
+
+            var data = _cart.GetCartItemById(id);
+            if (data == null)
             {
                 return NotFound();
             }
 
-            var pet = await _context.Pet
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (pet == null)
-            {
-                return NotFound();
-            }
-
-            return View(pet);
+            return View(data);
         }
 
         // POST: Pet/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id, int Quantity)
+        public IActionResult DeleteConfirmed(int id, int Quantity)
         {
             
-               var pet = _context.Pet.Find(id); 
-               pet.sub_Quantity(Quantity);
-               if (pet.Quantity == 0)
-               {
-                   _context.Pet.Remove(pet);
+               var data = _cart.GetCartItemById(id); 
+               var itemdata = _Ritem.GetRepoItemById(id);
+               if(itemdata.QuantitySold <= Quantity){
+                   itemdata.QuantitySold -= itemdata.QuantitySold;
+                   _Ritem.SaveChanges();
+               }else{   
+                   itemdata.QuantitySold -= Quantity;
+                   _Ritem.SaveChanges();
                }
-               await _context.SaveChangesAsync();
+               
+               data.Quantity -= Quantity;
+               
+               if (data.Quantity == 0)
+               {
+                   _cart.Remove(data);
+               }
+               _cart.SaveChanges();
                return RedirectToAction(nameof(Index));
             
         }
+         public IActionResult StockManage()
+        {
+            var data =  _Ritem.GetAllRepoItems();
+            return View(data);
+        }
 
+/*
         private bool PetExists(int id)
         {
             return _context.Pet.Any(e => e.Id == id);
-        }
+        } */
     }
 }

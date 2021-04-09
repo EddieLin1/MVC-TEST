@@ -1,5 +1,5 @@
 @model MvcStore.Models.Cart
-@{double a = 0.0;}
+@{double total = 0.0;}
 @{
     ViewData["Title"] = "Index";
 }
@@ -48,9 +48,9 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </th>
             <th>
-                @(item.Quantity * item.TotalPrice)
+                @(Math.Round(item.Quantity * item.item.Price, 2))
                 
-                @{a += item.Quantity * item.TotalPrice;}
+                @{total += item.TotalPrice;}
             </th>
             <td>
                 &nbsp;
@@ -64,7 +64,7 @@
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
             </td>
         </tr>
 }
@@ -72,5 +72,5 @@
     
 </table>
 
-<tr>Your Session Total: $@a</tr>
+<tr>Your Session Total: $@(Math.Round(total, 2))</tr>
  

@@ -346,3 +346,4 @@ C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\MvcStore.dll
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\ref\MvcStore.dll
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\MvcStore.pdb
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\MvcStore.genruntimeconfig.cache
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Pet\StockManage.cshtml.g.cs
