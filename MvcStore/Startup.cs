@@ -28,8 +28,6 @@ namespace MvcStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<MvcStoreContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("MvcStoreContext")));
             services.AddDbContext<StoreDBContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("StoreDBContext")));
             services.AddScoped<IItemRepository, ItemRepository>();

@@ -5,7 +5,7 @@ using MvcStore.Models;
 
 #nullable disable
 
-namespace MvcStore
+namespace MvcStore.Data
 {
     public partial class StoreDBContext : DbContext
     {

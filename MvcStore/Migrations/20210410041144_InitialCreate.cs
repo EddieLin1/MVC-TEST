@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MvcStore.Migrations.StoreDB
+namespace MvcStore.Migrations
 {
     public partial class InitialCreate : Migration
     {

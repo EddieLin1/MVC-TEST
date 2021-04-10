@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MvcStore;
+using MvcStore.Data;
 
-namespace MvcStore.Migrations.StoreDB
+namespace MvcStore.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
     partial class StoreDBContextModelSnapshot : ModelSnapshot
