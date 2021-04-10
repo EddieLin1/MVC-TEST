@@ -14,16 +14,16 @@ namespace MvcStore.Controllers
 {
     public class PetController : Controller
     {
-        private readonly MvcStoreContext _context;
+
         private readonly IItemRepository _Ritem;
         private readonly IShoppingCartRepository _cart;
         private readonly PetRepo _PetRepo = new PetRepo();
 
 
 
-        public PetController(MvcStoreContext context, IItemRepository item, IShoppingCartRepository cart)
+        public PetController(IItemRepository item, IShoppingCartRepository cart)
         {
-            _context = context;
+
             _Ritem = item;
             _cart = cart;
         }
@@ -42,7 +42,7 @@ namespace MvcStore.Controllers
             return View(data);
         }
 
-        // GET: Pet/Details/5
+        /*// GET: Pet/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -59,7 +59,7 @@ namespace MvcStore.Controllers
 
             return View(pet);
         }
-
+*/
         // GET: Pet/Create
         public IActionResult Create(int id) //this page is not showing and i am not sure why
         {
