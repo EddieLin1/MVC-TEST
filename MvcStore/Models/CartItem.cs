@@ -16,6 +16,7 @@ namespace MvcStore.Models
         public int ItemId{get; set;}
         [Range(1,100, ErrorMessage = "Please pick an int between 1-100")]
         public int Quantity {get; set;}
+         
         public string Description {
             get {return item.Description; }
         }
