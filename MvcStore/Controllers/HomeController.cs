@@ -23,7 +23,7 @@ namespace MvcStore.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ShopInventory()
         {
             return View();
         }

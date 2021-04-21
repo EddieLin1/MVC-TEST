@@ -1,5 +1,5 @@
-@model IEnumerable<MvcStore.Models.Pet>
-@{double a = 0.0;}
+@model MvcStore.Models.Cart
+@{double total = 0.0;}
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,7 +8,7 @@
 
 <p>
      <form asp-action="ShopView">
-    <input type="submit" value="Shop For Pets" class="btn btn-primary" /> 
+    <input type="submit" value="Shop For Items" class="btn btn-primary" /> 
 
     </form>
 </p>
@@ -16,16 +16,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                Price
             </th>
             <th>
                 Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Quantity)
+                Quantity
             </th>
             <th>
                 Total Price
@@ -33,24 +33,28 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.ShoppingCart) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Desc)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <th>
                 @Html.DisplayFor(modelItem => item.Quantity)
             </th>
             <th>
-                @(item.Quantity * item.Price)
+                @(Math.Round(item.Quantity * item.item.Price, 2))
                 
-                @{a += item.Quantity * item.Price;}
+                @{total += item.TotalPrice;}
+            </th>
+            <th>
+
+                <img src= @Url.Content(item.item.ImageURL) style="height : 50px;width : 65px;" >
             </th>
             <td>
                 &nbsp;
@@ -64,7 +68,7 @@
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
             </td>
         </tr>
 }
@@ -72,4 +76,5 @@
     
 </table>
 
-<tr>Your Session Total: $@a</tr>
+<tr>Your Session Total: $@(Math.Round(total, 2))</tr>
+ 

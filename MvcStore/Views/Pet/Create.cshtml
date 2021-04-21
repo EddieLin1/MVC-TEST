@@ -1,4 +1,4 @@
-@model MvcStore.Models.Pet
+@model MvcStore.Models.CartItem
 
 @{
     ViewData["Title"] = "Create";
@@ -6,12 +6,12 @@
 
 <h1>Create</h1>
 
-<h4>Pet</h4>
+<h4>Items</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="CreateConfirmed">
-        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ItemId" />
         <div class="form-group">
             <label asp-for="Quantity" class="control-label"></label>
             <input asp-for="Quantity" class="form-control" />

@@ -7505,11 +7505,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edric\\Desktop\\Projects\\C#\\MvcStore\\MvcStore\\MvcStore.csproj",
+      "projectUniqueName": "C:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\MvcStore.csproj",
       "projectName": "MvcStore",
-      "projectPath": "C:\\Users\\edric\\Desktop\\Projects\\C#\\MvcStore\\MvcStore\\MvcStore.csproj",
+      "projectPath": "C:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\MvcStore.csproj",
       "packagesPath": "C:\\Users\\edric\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edric\\Desktop\\Projects\\C#\\MvcStore\\MvcStore\\obj\\",
+      "outputPath": "C:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\edric\\AppData\\Roaming\\NuGet\\NuGet.Config"

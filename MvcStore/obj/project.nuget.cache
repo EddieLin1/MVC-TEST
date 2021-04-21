@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4frwfFdjfgc0s10I5jmFaAO/9tNdnLI22xyUWFPPSZ/ppOqzWyBvytBh49PhcS+AuANaBziDN+wUhxvMR3wuyQ==",
+  "dgSpecHash": "bsv3S40gga/31H9Rl5Y/xS697cdZiwimXnVHzT2n3BRvKQxorauTS32viRZVXmGN82FgSEm71gFUg+V8DVZAHw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\edric\\Desktop\\Projects\\C#\\MvcStore\\MvcStore\\MvcStore.csproj",
+  "projectFilePath": "C:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\MvcStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\edric\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\edric\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.2\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.2.nupkg.sha512",

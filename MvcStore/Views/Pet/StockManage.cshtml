@@ -1,13 +1,10 @@
 @model IEnumerable<MvcStore.Models.Item>
 
-
-
 @{
-    ViewData["Title"] = "ShopView";
+    ViewData["Title"] = "StoreInventory";
 }
 
-<h1>Items you could Buy!</h1>
- 
+<h1>This is where we can see what is in Stock</h1>
 <table class="table">
     <thead>
         <tr>
@@ -19,6 +16,9 @@
             </th>
             <th>
                 Description
+            </th>
+            <th>
+                Inventory Sold
             </th>
             
         </tr>
@@ -36,18 +36,12 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                <img src= @Url.Content(item.ImageURL) style="height : 50px;width : 65px;" >
-                
-                
+                @Html.DisplayFor(modelItem => item.QuantitySold)
             </td>
-            
             <td>
-                <form asp-action="Create" asp-route-id= "@item.Id">
-                    <input type="submit" value="Add To Cart" class="btn btn-primary" /> 
-                </form>
+                <img src= @Url.Content(item.ImageURL) style="height : 50px;width : 65px;" >
             </td>
-            
-            
+                    
         </tr>
 }
     </tbody>
@@ -55,5 +49,3 @@
 <div>
     <a asp-action="Index">Back to Cart</a>
 </div>
-
-
