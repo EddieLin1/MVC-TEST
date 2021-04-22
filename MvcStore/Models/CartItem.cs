@@ -1,8 +1,4 @@
-using System.Collections.Generic;
-using System.Web;
-using MvcStore.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using MvcStore.Interface;
 using System.ComponentModel.DataAnnotations;
 
 namespace MvcStore.Models

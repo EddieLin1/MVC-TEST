@@ -1,7 +1,5 @@
-using MvcStore.Repo;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System;
+
 namespace MvcStore.Models
 {
     public class Item
