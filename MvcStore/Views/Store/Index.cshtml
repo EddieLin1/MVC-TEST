@@ -1,5 +1,4 @@
 @model MvcStore.Models.Cart
-@{double total = 0.0;}
 @{
     ViewData["Title"] = "Index";
 }
@@ -49,8 +48,7 @@
             </th>
             <th>
                 @(Math.Round(item.Quantity * item.item.Price, 2))
-                
-                @{total += item.TotalPrice;}
+            
             </th>
             <th>
 
@@ -76,5 +74,5 @@
     
 </table>
 
-<tr>Your Session Total: $@(Math.Round(total, 2))</tr>
+<tr>Your Session Total: $@(Math.Round(Model.CartTotal, 2))</tr>
  
