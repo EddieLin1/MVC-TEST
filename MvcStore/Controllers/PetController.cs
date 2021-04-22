@@ -12,7 +12,7 @@ using MvcStore.Interface;
 
 namespace MvcStore.Controllers
 {
-    public class PetController : Controller
+    public class StoreController : Controller
     {
 
         private readonly IItemRepository _Ritem;
@@ -21,7 +21,7 @@ namespace MvcStore.Controllers
 
 
 
-        public PetController(IItemRepository item, IShoppingCartRepository cart)
+        public StoreController(IItemRepository item, IShoppingCartRepository cart)
         {
 
             _Ritem = item;

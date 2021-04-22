@@ -58,7 +58,7 @@ namespace MvcStore
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Pet}/{action=Index}/{id?}");
+                    pattern: "{controller=Store}/{action=Index}/{id?}");
             });
         }
     }
