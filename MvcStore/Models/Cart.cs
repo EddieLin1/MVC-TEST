@@ -8,12 +8,12 @@ namespace MvcStore.Models
         [NotMapped]
         public List<CartItem> ShoppingCart {get; set;}
         [NotMapped]
-        public float CartTotal{
+        public double CartTotal{
             get{return _CartTotal();}
             }
 
-        public float _CartTotal(){
-            float data = 0;
+        public double _CartTotal(){
+            double data = 0;
             foreach(CartItem item in ShoppingCart){
                 data += item.TotalPrice;
             }

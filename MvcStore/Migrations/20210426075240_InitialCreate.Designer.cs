@@ -9,8 +9,8 @@ using MvcStore.Data;
 namespace MvcStore.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20210424032608_Order")]
-    partial class Order
+    [Migration("20210426075240_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,8 +52,8 @@ namespace MvcStore.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<int>("QuantitySold")
                         .HasColumnType("int");
@@ -61,6 +61,56 @@ namespace MvcStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ItemsRepo");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Yellow/Green bananas, high in potassium",
+                            Name = "Bananas (Bunch)",
+                            Price = 1.95,
+                            QuantitySold = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Long and green and high in minerals good for skin",
+                            Name = "English Cucumbers",
+                            Price = 2.48,
+                            QuantitySold = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Sweet and red strawberries, very juicy",
+                            Name = "Strawberries",
+                            Price = 4.9800000000000004,
+                            QuantitySold = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Long green stalks, also called \"Scallions\"",
+                            Name = "Green Onion",
+                            Price = 0.97999999999999998,
+                            QuantitySold = 0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Grade A large omega 3 eggs",
+                            Name = "Eggs",
+                            Price = 3.98,
+                            QuantitySold = 0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Green Avocados from Mexico",
+                            Name = "Avocados (Bag)",
+                            Price = 4.5899999999999999,
+                            QuantitySold = 0
+                        });
                 });
 
             modelBuilder.Entity("MvcStore.Models.Order", b =>

@@ -16,7 +16,7 @@ namespace MvcStore.Models
         public string Description {
             get {return item.Description; }
         }
-        public float TotalPrice {
+        public double TotalPrice {
             get{return item.Price * Quantity; }
         }
 
