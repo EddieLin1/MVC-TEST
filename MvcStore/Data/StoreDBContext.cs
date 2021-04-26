@@ -19,6 +19,7 @@ namespace MvcStore.Data
         }
         public DbSet<Item> ItemsRepo { get; set; }
         public DbSet<CartItem> ShoppingCart {get; set;}
+        public DbSet<Order> OrderList {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -36,6 +37,9 @@ namespace MvcStore.Data
                 
             modelBuilder.Entity<CartItem>()
                 .HasKey(p => p.Id);
+                
+            modelBuilder.Entity<Order>()
+                .HasKey(p => p.OrderId);
                 
 
             OnModelCreatingPartial(modelBuilder);

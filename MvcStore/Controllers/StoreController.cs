@@ -1,13 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using MvcStore.Data;
 using MvcStore.Models;
-using MvcStore.Repo;
 using MvcStore.Interface;
 
 namespace MvcStore.Controllers
@@ -17,7 +9,6 @@ namespace MvcStore.Controllers
 
         private readonly IItemRepository _Ritem;
         private readonly IShoppingCartRepository _cart;
-        private readonly PetRepo _PetRepo = new PetRepo();
 
 
 
