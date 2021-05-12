@@ -1,12 +1,9 @@
 @model MvcStore.Models.Cart
-@{
-    ViewData["Title"] = "Index";
-}
 
 <h1>Your Shopping Cart</h1>
 
 <p>
-     <form asp-action="ShopView">
+    <form asp-action="ShopView">
     <input type="submit" value="Shop For Items" class="btn btn-primary" /> 
 
     </form>
@@ -70,9 +67,12 @@
             </td>
         </tr>
 }
+    
     </tbody>
     
 </table>
-
-<tr>Your Session Total: $@(Math.Round(Model.CartTotal, 2))</tr>
+<p>
+<a class="btn btn-success" asp-area="" asp-controller="Order" asp-action="OrderCreate" asp-route-model="@Model">Confirm Purchase</a> 
+</p>
+<p>Your Session Total: $@(Math.Round(Model.CartTotal, 2))</p>
  

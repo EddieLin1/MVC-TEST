@@ -14,7 +14,6 @@ namespace MvcStore.Controllers
 
         public StoreController(IItemRepository item, IShoppingCartRepository cart)
         {
-
             _Ritem = item;
             _cart = cart;
         }

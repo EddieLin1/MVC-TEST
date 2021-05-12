@@ -32,6 +32,7 @@ namespace MvcStore
                 options.UseSqlServer(Configuration.GetConnectionString("StoreDBContext")));
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
