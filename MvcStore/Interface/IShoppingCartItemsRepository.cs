@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MvcStore.Interface
 {
-    public interface IShoppingCartRepository
+    public interface IShoppingCartItemsRepository
     {
        // Task<IEnumerable<Cart>> GetAllCartItemsAsync();
         CartItem GetCartItemById(int id);

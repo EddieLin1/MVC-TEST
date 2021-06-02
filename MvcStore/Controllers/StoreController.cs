@@ -1,29 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using MvcStore.Data;
 using MvcStore.Models;
-using MvcStore.Repo;
 using MvcStore.Interface;
 
 namespace MvcStore.Controllers
 {
-    public class PetController : Controller
+    public class StoreController : Controller
     {
 
         private readonly IItemRepository _Ritem;
-        private readonly IShoppingCartRepository _cart;
-        private readonly PetRepo _PetRepo = new PetRepo();
+        private readonly IShoppingCartItemsRepository _cart;
 
 
 
-        public PetController(IItemRepository item, IShoppingCartRepository cart)
+        public StoreController(IItemRepository item, IShoppingCartItemsRepository cart)
         {
-
             _Ritem = item;
             _cart = cart;
         }
@@ -71,7 +61,7 @@ namespace MvcStore.Controllers
 
             return View(temp);
 
-        }
+        } 
 
         // POST: Pet/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.

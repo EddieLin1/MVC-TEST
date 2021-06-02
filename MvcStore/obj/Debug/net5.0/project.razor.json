@@ -15603,13 +15603,18 @@
   "RootNamespace": "MvcStore",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\Index.cshtml",
+      "TargetPath": "Views\\Store\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Pet\\Delete.cshtml",
-      "TargetPath": "Views\\Pet\\Delete.cshtml",
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\Details.cshtml",
+      "TargetPath": "Views\\Store\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15623,6 +15628,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Order\\OrderCreate.cshtml",
+      "TargetPath": "Views\\Order\\OrderCreate.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -15633,28 +15643,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Pet\\Edit.cshtml",
-      "TargetPath": "Views\\Pet\\Edit.cshtml",
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Order\\AdminDisplayOrders.cshtml",
+      "TargetPath": "Views\\Order\\AdminDisplayOrders.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Pet\\StockManage.cshtml",
-      "TargetPath": "Views\\Pet\\StockManage.cshtml",
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\StockManage.cshtml",
+      "TargetPath": "Views\\Store\\StockManage.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Pet\\Index.cshtml",
-      "TargetPath": "Views\\Pet\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Pet\\ShopView.cshtml",
-      "TargetPath": "Views\\Pet\\ShopView.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Pet\\Create.cshtml",
-      "TargetPath": "Views\\Pet\\Create.cshtml",
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\Edit.cshtml",
+      "TargetPath": "Views\\Store\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15663,13 +15663,23 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Pet\\Details.cshtml",
-      "TargetPath": "Views\\Pet\\Details.cshtml",
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\Create.cshtml",
+      "TargetPath": "Views\\Store\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\Delete.cshtml",
+      "TargetPath": "Views\\Store\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\ShopView.cshtml",
+      "TargetPath": "Views\\Store\\ShopView.cshtml",
       "FileKind": "mvc"
     }
   ],
