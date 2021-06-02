@@ -12,7 +12,7 @@ namespace MvcStore.Controllers
         }
         public IActionResult OrderCreate(Cart model)
         {
-            return RedirectToAction(nameof(OrderCreateConfirmed), model);
+            return View(model);
         }
         public IActionResult OrderCreateConfirmed(Cart model, string Fname, string Lname, string Address, string City, string State_Province, string PostalCode, string Country, string Phone, string Email)
         {

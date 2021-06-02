@@ -8,11 +8,11 @@ namespace MvcStore.Controllers
     {
 
         private readonly IItemRepository _Ritem;
-        private readonly IShoppingCartRepository _cart;
+        private readonly IShoppingCartItemsRepository _cart;
 
 
 
-        public StoreController(IItemRepository item, IShoppingCartRepository cart)
+        public StoreController(IItemRepository item, IShoppingCartItemsRepository cart)
         {
             _Ritem = item;
             _cart = cart;
@@ -61,7 +61,7 @@ namespace MvcStore.Controllers
 
             return View(temp);
 
-        }
+        } 
 
         // POST: Pet/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.

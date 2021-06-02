@@ -347,6 +347,5 @@ C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\s
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\store\Index.cshtml.g.cs
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\store\ShopView.cshtml.g.cs
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\store\StockManage.cshtml.g.cs
-C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Order\OrderCreate.cshtml.g.cs
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Order\AdminDisplayOrders.cshtml.g.cs
-C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Order\OrderReview.cshtml.g.cs
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Order\OrderCreate.cshtml.g.cs

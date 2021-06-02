@@ -9,7 +9,7 @@ using MvcStore.Data;
 namespace MvcStore.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20210426075240_InitialCreate")]
+    [Migration("20210522042300_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,12 +21,31 @@ namespace MvcStore.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
+            modelBuilder.Entity("MvcStore.Models.Cart", b =>
+                {
+                    b.Property<double>("CartId")
+                        .HasColumnType("float");
+
+                    b.Property<double>("CartTotal")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("Purchased")
+                        .HasColumnType("bit");
+
+                    b.HasKey("CartId");
+
+                    b.ToTable("Cart");
+                });
+
             modelBuilder.Entity("MvcStore.Models.CartItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ItemId")
                         .HasColumnType("int");
@@ -36,7 +55,7 @@ namespace MvcStore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ShoppingCart");
+                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("MvcStore.Models.Item", b =>
@@ -124,6 +143,9 @@ namespace MvcStore.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
 
                     b.Property<string>("City")
                         .IsRequired()

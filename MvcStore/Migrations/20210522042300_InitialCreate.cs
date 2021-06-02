@@ -7,6 +7,19 @@ namespace MvcStore.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Cart",
+                columns: table => new
+                {
+                    CartId = table.Column<double>(type: "float", nullable: false),
+                    Purchased = table.Column<bool>(type: "bit", nullable: false),
+                    CartTotal = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cart", x => x.CartId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ItemsRepo",
                 columns: table => new
                 {
@@ -36,7 +49,8 @@ namespace MvcStore.Migrations
                     PostalCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CartId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,17 +58,18 @@ namespace MvcStore.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ShoppingCart",
+                name: "ShoppingCartItems",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CartId = table.Column<int>(type: "int", nullable: false),
                     ItemId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShoppingCart", x => x.Id);
+                    table.PrimaryKey("PK_ShoppingCartItems", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
@@ -74,13 +89,16 @@ namespace MvcStore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Cart");
+
+            migrationBuilder.DropTable(
                 name: "ItemsRepo");
 
             migrationBuilder.DropTable(
                 name: "OrderList");
 
             migrationBuilder.DropTable(
-                name: "ShoppingCart");
+                name: "ShoppingCartItems");
         }
     }
 }

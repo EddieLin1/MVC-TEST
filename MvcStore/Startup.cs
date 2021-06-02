@@ -31,7 +31,7 @@ namespace MvcStore
             services.AddDbContext<StoreDBContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("StoreDBContext")));
             services.AddScoped<IItemRepository, ItemRepository>();
-            services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
+            services.AddScoped<IShoppingCartItemsRepository, ShoppingCartItemsRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
         }
 

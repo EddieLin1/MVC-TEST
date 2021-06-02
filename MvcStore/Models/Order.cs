@@ -5,6 +5,7 @@ namespace MvcStore.Models
 {
     public class Order
     {
+        [Key]
         public int OrderId {get; set;}
         [Required(ErrorMessage = "First Name is required")]
         [StringLength(50, MinimumLength = 2,
@@ -38,6 +39,7 @@ namespace MvcStore.Models
         [DataType(DataType.EmailAddress, ErrorMessage = "Invalid Email Address")]
         [RegularExpression(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-‌​]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$", ErrorMessage = "Email is not valid")]
         public string Email      { get; set; }
+        public int CartId {get; set;}
 
         public double Total     { 
             get{return OrderCart.CartTotal;}
