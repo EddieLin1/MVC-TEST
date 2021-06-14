@@ -9,7 +9,7 @@ using MvcStore.Data;
 namespace MvcStore.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20210522042300_InitialCreate")]
+    [Migration("20210602080324_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,6 +183,27 @@ namespace MvcStore.Migrations
                     b.HasKey("OrderId");
 
                     b.ToTable("OrderList");
+                });
+
+            modelBuilder.Entity("MvcStore.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

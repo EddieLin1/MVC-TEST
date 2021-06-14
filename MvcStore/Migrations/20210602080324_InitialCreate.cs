@@ -72,6 +72,21 @@ namespace MvcStore.Migrations
                     table.PrimaryKey("PK_ShoppingCartItems", x => x.Id);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OrderId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
             migrationBuilder.InsertData(
                 table: "ItemsRepo",
                 columns: new[] { "Id", "Description", "Name", "Price", "QuantitySold" },
@@ -99,6 +114,9 @@ namespace MvcStore.Migrations
 
             migrationBuilder.DropTable(
                 name: "ShoppingCartItems");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

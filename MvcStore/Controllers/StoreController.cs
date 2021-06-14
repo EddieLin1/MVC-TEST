@@ -170,8 +170,8 @@ namespace MvcStore.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id, int Quantity)
         {
-            
-               var data = _cart.GetCartItemById(id); 
+            if(ModelState.IsValid){
+                 var data = _cart.GetCartItemById(id); 
                var itemdata = _Ritem.GetRepoItemById(id);
                if(itemdata.QuantitySold <= Quantity){
                    itemdata.QuantitySold -= itemdata.QuantitySold;
@@ -189,6 +189,14 @@ namespace MvcStore.Controllers
                }
                _cart.SaveChanges();
                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            } 
+
+            
+              
             
         }
          public IActionResult StockManage()

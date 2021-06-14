@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -12,6 +9,7 @@ using MvcStore.Data;
 using Microsoft.EntityFrameworkCore;
 using MvcStore.Repo;
 using MvcStore.Interface;
+using MvcStore.Models;
 
 namespace MvcStore
 {
@@ -30,6 +28,20 @@ namespace MvcStore
             services.AddControllersWithViews();
             services.AddDbContext<StoreDBContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("StoreDBContext")));
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 1;
+
+            })
+                .AddEntityFrameworkStores<StoreDBContext>();
+
+
+
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IShoppingCartItemsRepository, ShoppingCartItemsRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
@@ -54,6 +66,7 @@ namespace MvcStore
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

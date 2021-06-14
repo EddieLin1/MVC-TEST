@@ -26,8 +26,15 @@ using MvcStore.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"afe5f0bc72f9c6f940511cf126bb0b97ab4dcd18", @"/Views/Store/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"74290c10aee00ecb252a7192112797f733266b63", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4c01f6375ea150eb393fec0a5e372bc11e335d2d", @"/Views/_ViewImports.cshtml")]
     public class Views_Store_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MvcStore.Models.Cart>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "ShopView", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -63,7 +70,7 @@ using MvcStore.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<h1>Your Shopping Cart</h1>\r\n\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afe5f0bc72f9c6f940511cf126bb0b97ab4dcd185253", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afe5f0bc72f9c6f940511cf126bb0b97ab4dcd185447", async() => {
                 WriteLiteral("\r\n    <input type=\"submit\" value=\"Shop For Items\" class=\"btn btn-primary\" /> \r\n\r\n    ");
             }
             );
@@ -177,7 +184,7 @@ using MvcStore.Models;
                 &nbsp;
                 &nbsp;
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afe5f0bc72f9c6f940511cf126bb0b97ab4dcd189814", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afe5f0bc72f9c6f940511cf126bb0b97ab4dcd1810008", async() => {
                 WriteLiteral("Delete");
             }
             );
@@ -216,7 +223,7 @@ using MvcStore.Models;
 #line hidden
 #nullable disable
             WriteLiteral("    \r\n    </tbody>\r\n    \r\n</table>\r\n<p>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afe5f0bc72f9c6f940511cf126bb0b97ab4dcd1812243", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afe5f0bc72f9c6f940511cf126bb0b97ab4dcd1812438", async() => {
                 WriteLiteral("Confirm Purchase");
             }
             );

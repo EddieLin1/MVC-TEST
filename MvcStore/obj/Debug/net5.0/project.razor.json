@@ -15643,6 +15643,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\User\\Login.cshtml",
+      "TargetPath": "Views\\User\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Order\\AdminDisplayOrders.cshtml",
       "TargetPath": "Views\\Order\\AdminDisplayOrders.cshtml",
       "FileKind": "mvc"
@@ -15653,8 +15658,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\User\\failed.cshtml",
+      "TargetPath": "Views\\User\\failed.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\Edit.cshtml",
       "TargetPath": "Views\\Store\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\User\\Register.cshtml",
+      "TargetPath": "Views\\User\\Register.cshtml",
       "FileKind": "mvc"
     },
     {
