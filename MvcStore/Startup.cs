@@ -45,6 +45,7 @@ namespace MvcStore
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IShoppingCartItemsRepository, ShoppingCartItemsRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

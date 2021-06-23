@@ -1,6 +1,9 @@
+@inject SignInManager<IdentityUser> signInManager;
 @model MvcStore.Models.Order
 
-<h1>Please enter your Personal Information:</h1>
+@if (signInManager.IsSignedIn(User)) 
+{
+  <h1>Please enter your Personal Information:</h1>
 
 <div class="row">
     <div class="col-md-4">
@@ -50,4 +53,21 @@
         <a asp-action="Index" asp-controller="Store">Back to Shop View</a>
     </form>
     </div>
-</div>
+</div>                     
+                              
+}
+else
+{
+    <h1>Please Login First to Continue:</h1>  
+    <div class="col-md-3">                 
+    <a class="btn btn-warning" asp-area="" asp-controller="User" asp-action="Login">To Login</a> 
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Store">Back to Shop View</a>        
+    </div> 
+  
+                            
+}
+    
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

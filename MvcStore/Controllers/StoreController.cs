@@ -10,12 +10,14 @@ namespace MvcStore.Controllers
         private readonly IItemRepository _Ritem;
         private readonly IShoppingCartItemsRepository _cart;
 
+        private readonly ICartRepository _cartPurch;
 
 
-        public StoreController(IItemRepository item, IShoppingCartItemsRepository cart)
+        public StoreController(IItemRepository item, IShoppingCartItemsRepository cart, ICartRepository cartpurch)
         {
             _Ritem = item;
             _cart = cart;
+            _cartPurch = cartpurch;
         }
 
         public IActionResult ShopView()
@@ -29,6 +31,7 @@ namespace MvcStore.Controllers
         public IActionResult Index()
         {
             var data =  _cart.GetAllCartItems();
+            data.CartTotal = data._CartTotal();
             return View(data);
         }
 
@@ -85,7 +88,7 @@ namespace MvcStore.Controllers
                 {
                     var item = _Ritem.GetRepoItemById(ItemId);
                     item.QuantitySold += Quantity;
-                    _cart.AddNew(item, Quantity);
+                    _cart.AddNew(item, Quantity, _cart.CurrentCartNum(_cartPurch.PurchaseCheckInit()));
                     _Ritem.SaveChanges();
                     _cart.SaveChanges();
                     return RedirectToAction(nameof(Index));

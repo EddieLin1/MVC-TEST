@@ -15613,6 +15613,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Order\\test.cshtml",
+      "TargetPath": "Views\\Order\\test.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"

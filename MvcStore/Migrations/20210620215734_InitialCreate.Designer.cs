@@ -10,8 +10,8 @@ using MvcStore.Data;
 namespace MvcStore.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20210607032546_AddingIdentity")]
-    partial class AddingIdentity
+    [Migration("20210620215734_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -376,6 +376,10 @@ namespace MvcStore.Migrations
                     b.Property<string>("State_Province")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("OrderId");
 

@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using MvcStore.Interface;
 using MvcStore.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace MvcStore.Controllers
 {
     public class OrderController : Controller
     {
         private readonly IOrderRepository _OrderList;
+        //private readonly SignInManager<IdentityUser> _signInManager;
+
         public OrderController(IOrderRepository OrderList){
             _OrderList = OrderList;
         }
@@ -22,6 +25,10 @@ namespace MvcStore.Controllers
         public IActionResult DisplayOrder()
         {
             return View();
+        }
+        public IActionResult test(Cart model)
+        {
+            return View(model);
         }
 
 

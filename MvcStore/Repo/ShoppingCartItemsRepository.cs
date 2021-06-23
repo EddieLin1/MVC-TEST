@@ -20,7 +20,30 @@ namespace MvcStore.Repo
             Cart _cart = new Cart();
            // _cart.ShoppingCart = _context.ShoppingCartItems.Where(j => j.CartId.Equals(2)).ToList();
            _cart.ShoppingCart = _context.ShoppingCartItems.ToList();
+           //_cart.ShoppingCart = _context.ShoppingCartItems.Where(x => x.CartId == CurrentCartNum())
+                        //.ToList();
             populate(_cart);
+            return _cart;
+        }
+        public int CurrentCartNum(bool? purchased_check) // need cart repo to verify if this is current cart num / not purchased yet or not thing
+        {
+            int _CartId = 0;   
+
+            if(purchased_check == false){
+                _CartId = _context.ShoppingCartItems.Max(x => x.CartId);
+            }else if(purchased_check == true){
+                _CartId = _context.ShoppingCartItems.Max(x => x.CartId) + 1;
+            }
+            
+            return _CartId;
+        }
+        public Cart test()
+        {
+            Cart _cart = new Cart();
+            var _CartId = _context.ShoppingCartItems.Max(x => x.CartId) + 1;
+            var query = _context.ShoppingCartItems.Where(x => x.CartId == _CartId)
+                        .ToList();
+            
             return _cart;
         }
         public CartItem GetCartItemById(int id)
@@ -33,8 +56,9 @@ namespace MvcStore.Repo
             return data;
             
         }
-        public void AddNew(Item item, int Quantity){
+        public void AddNew(Item item, int Quantity, int _cartId){
             var data = item2CartItem(item, Quantity);
+            data.CartId = _cartId;
             _context.ShoppingCartItems.Add(data);
             _context.SaveChanges();
         }

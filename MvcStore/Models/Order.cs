@@ -12,6 +12,8 @@ namespace MvcStore.Models
         ErrorMessage = "First Name should be minimum 3 characters and a maximum of 50 characters")]
         [DataType(DataType.Text)]
         public string FirstName  { get; set; }
+        [Column(TypeName = "nvarchar(450)")]
+        public int UserId {get; set;}
         [Required(ErrorMessage = "Last Name is required")]
         [StringLength(50, MinimumLength = 2,
         ErrorMessage = "First Name should be minimum 3 characters and a maximum of 50 characters")]
