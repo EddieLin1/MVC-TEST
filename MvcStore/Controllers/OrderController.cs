@@ -3,6 +3,8 @@ using MvcStore.Interface;
 using MvcStore.Models;
 using Microsoft.AspNetCore.Identity;
 
+
+
 namespace MvcStore.Controllers
 {
     public class OrderController : Controller
@@ -13,14 +15,36 @@ namespace MvcStore.Controllers
         public OrderController(IOrderRepository OrderList){
             _OrderList = OrderList;
         }
-        public IActionResult OrderCreate(Cart model)
+        public IActionResult OrderCreate(int CartId)
         {
             var temp = new Order();
+            temp.CartId = CartId;
             return View(temp);
         }
-        public IActionResult OrderCreateConfirmed(Cart model, string Fname, string Lname, string Address, string City, string State_Province, string PostalCode, string Country, string Phone, string Email)
+        //int CartId, int UserId, string FirstName, string LastName, string Address, string City, string State_Province, string PostalCode, string Country, string Phone, string Email
+        public IActionResult OrderCreateConfirmed(Order order)
         {
-            return View();
+           
+           if(ModelState.IsValid){
+                Order newO = order;
+                /*newO.CartId = CartId;
+                newO.UserId = UserId;
+                newO.FirstName = FirstName;
+                newO.LastName = LastName;
+                newO.Address = Address;
+                newO.City = City;
+                newO.State_Province = State_Province;
+                newO.PostalCode = PostalCode;
+                newO.Country = Country;
+                newO.Phone = Phone;
+                newO.Email = Email; */
+                
+                _OrderList.AddNew(newO);
+                _OrderList.SaveChanges();
+                return RedirectToAction("Index", "Store", "");
+            }else{ 
+            return View("failed", order);
+            }
         }
         public IActionResult DisplayOrder()
         {

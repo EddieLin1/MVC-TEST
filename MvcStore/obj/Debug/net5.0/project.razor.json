@@ -15623,6 +15623,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Shared\\failed.cshtml",
+      "TargetPath": "Views\\Shared\\failed.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -15660,11 +15665,6 @@
     {
       "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Store\\StockManage.cshtml",
       "TargetPath": "Views\\Store\\StockManage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\User\\failed.cshtml",
-      "TargetPath": "Views\\User\\failed.cshtml",
       "FileKind": "mvc"
     },
     {

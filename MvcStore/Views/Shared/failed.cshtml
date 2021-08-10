@@ -1,0 +1,30 @@
+@model MvcStore.Models.Order;
+
+this action failed
+<p>
+ @Html.DisplayFor(model => Model.FirstName)
+</p>
+<p>
+ @Html.DisplayFor(model => Model.LastName)
+</p>
+<p>
+ @Html.DisplayFor(model => Model.CartId)
+</p>
+<p>
+ @Html.DisplayFor(model => Model.UserId)
+</p>
+
+
+
+
+@Html.DisplayFor(model => Model.Address)
+@Html.DisplayFor(model => Model.City)
+@Html.DisplayFor(model => Model.State_Province)
+@Html.DisplayFor(model => Model.PostalCode)
+@Html.DisplayFor(model => Model.Country)
+@Html.DisplayFor(model => Model.Phone)
+@Html.DisplayFor(model => Model.Email)
+
+
+
+@Html.ValidationSummary()

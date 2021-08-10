@@ -1,4 +1,4 @@
-using MvcStore.Interface;
+ using MvcStore.Interface;
 using MvcStore.Data;
 using System.Collections.Generic;
 using MvcStore.Models;
@@ -27,6 +27,9 @@ namespace MvcStore.Repo
         }
         public void Remove(Order order){
             _context.OrderList.Remove(order);
+        }
+        public void AddNew(Order order){
+            _context.OrderList.Add(order);
         }
 
         

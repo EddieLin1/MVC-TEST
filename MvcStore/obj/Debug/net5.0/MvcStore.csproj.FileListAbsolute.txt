@@ -356,5 +356,5 @@ C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.Asp
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\User\failed.cshtml.g.cs
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Order\test.cshtml.g.cs
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Shared\failed.cshtml.g.cs
