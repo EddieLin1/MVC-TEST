@@ -1,7 +1,15 @@
-# Superstore-ASP.NET-MVC
+# Superstore REST API (ASP.NET Core MVC)
 
-Simple shopping application with ASP.NET Core Web API with MVC
-- SqlServer
-- Entity Framework Core
-- Repository design pattern
-- Dbcontext design
+### The purpose of this project is to learn and practice concepts related to:
+> - Building a REST API
+> - .NET Core
+> - MVC Architectural Pattern
+> - C#
+#### More specifically, I used the following:
+> - Dependency injection
+> - Repository design pattern
+> - SQL Server Express & SQL Database
+> - Entity Framework Core O/RM (DBContext, Migration)
+> - RESTful API guidelines
+> - HTTP (GET, POST, PUT, PATCH, DELETE, status codes)
+> - Views (Razor, Shared Layout, ViewBag, RenderSection)
