@@ -13,3 +13,4 @@
 > - RESTful API guidelines
 > - HTTP (GET, POST, PUT, PATCH, DELETE, status codes)
 > - Views (Razor, Shared Layout, ViewBag, RenderSection)
+![image] MvcStore/img/buy page.PNG
