@@ -13,6 +13,8 @@
 > - RESTful API guidelines
 > - HTTP (GET, POST, PUT, PATCH, DELETE, status codes)
 > - Views (Razor, Shared Layout, ViewBag, RenderSection)
+
+Also included login and register pages with simple regex expression.
 ##### Application Architechture:
 <img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/architechture.png" alt="alt text" width="600" height="400">
 <br>
