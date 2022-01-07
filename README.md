@@ -13,9 +13,15 @@
 > - RESTful API guidelines
 > - HTTP (GET, POST, PUT, PATCH, DELETE, status codes)
 > - Views (Razor, Shared Layout, ViewBag, RenderSection)
-
-##### This is what the front page looks like:
+##### Application Architechture:
+<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/architechture.png" alt="alt text" width="600" height="400">
 <br>
+This is what the front page looks like and subsequent buypage look like:
+<br>
+<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/store%20front.PNG" alt="alt text" width="600" height="400">
 <img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/buy%20page.PNG" alt="alt text" width="600" height="400">
 <br>
 <br>
+The SQL server:
+<br>
+<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/databse.PNG" alt="alt text" width="600" height="400">
