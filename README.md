@@ -14,7 +14,7 @@
 > - HTTP (GET, POST, PUT, PATCH, DELETE, status codes)
 > - Views (Razor, Shared Layout, ViewBag, RenderSection)
 
-This is what the front page looks like:
+## This is what the front page looks like:
 <br>
 <img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/buy%20page.PNG" alt="alt text" width="600" height="400">
 <br>
