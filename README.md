@@ -14,4 +14,4 @@
 > - HTTP (GET, POST, PUT, PATCH, DELETE, status codes)
 > - Views (Razor, Shared Layout, ViewBag, RenderSection)
 
-![image](https://github.com/EddieLin1/Superstore-ASP.NET-MVC/blob/e0bcda364e17dff99e8eff504a8b724987f120aa/MvcStore/img/buy%20page.PNG)
+![image](https://raw.github.com/EddieLin1/Superstore-ASP.NET-MVC/MvcStore/img/buy%20page.PNG)
