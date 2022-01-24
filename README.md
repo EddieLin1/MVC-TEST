@@ -13,6 +13,7 @@
 > - RESTful API guidelines
 > - HTTP (GET, POST, PUT, PATCH, DELETE, status codes)
 > - Views (Razor, Shared Layout, ViewBag, RenderSection)
+> - ASP.NET identity
 
 Also included login and register pages with simple regex expression.
 ##### Application Architechture:
