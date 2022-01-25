@@ -5,6 +5,7 @@
 > - .NET Core
 > - MVC Architectural Pattern
 > - C#
+> - CRUD operations
 #### More specifically, I used the following:
 > - Dependency injection
 > - Repository design pattern
