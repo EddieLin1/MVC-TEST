@@ -8,8 +8,9 @@ using Microsoft.Extensions.Hosting;
 using MvcStore.Data;
 using Microsoft.EntityFrameworkCore;
 using MvcStore.Repo;
+using MvcStore.Repo.ApiTestRepo;
 using MvcStore.Interface;
-using MvcStore.Models;
+using MvcStore.Interface.IApiTestInterface;
 
 namespace MvcStore
 {
@@ -46,6 +47,7 @@ namespace MvcStore
             services.AddScoped<IShoppingCartItemsRepository, ShoppingCartItemsRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<IApiTestRepository, ApiTestRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

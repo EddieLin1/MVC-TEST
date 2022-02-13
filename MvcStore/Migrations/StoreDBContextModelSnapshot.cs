@@ -216,6 +216,21 @@ namespace MvcStore.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("MvcStore.Models.ApiTestModel.ApiTest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ApiTest");
+                });
+
             modelBuilder.Entity("MvcStore.Models.Cart", b =>
                 {
                     b.Property<double>("CartId")
@@ -224,7 +239,7 @@ namespace MvcStore.Migrations
                     b.Property<double>("CartTotal")
                         .HasColumnType("float");
 
-                    b.Property<bool>("Purchased")
+                    b.Property<bool?>("Purchased")
                         .HasColumnType("bit");
 
                     b.HasKey("CartId");
@@ -347,6 +362,7 @@ namespace MvcStore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -375,8 +391,10 @@ namespace MvcStore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("Total")
+                        .HasColumnType("float");
+
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("OrderId");
