@@ -28,6 +28,9 @@ namespace MvcStore.Repo
         public void Remove(Order order){
             _context.OrderList.Remove(order);
         }
+        public void AddNew(Order order){
+            _context.OrderList.Add(order);
+        }
 
         
     }

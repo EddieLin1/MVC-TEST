@@ -1,13 +1,14 @@
 using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using MvcStore.Models;
+using MvcStore.Models.ApiTestModel;
 
 #nullable disable
 
 namespace MvcStore.Data
 {
-    public partial class StoreDBContext : DbContext
+    public partial class StoreDBContext : IdentityDbContext
     {
         public StoreDBContext()
         {
@@ -21,6 +22,7 @@ namespace MvcStore.Data
         public DbSet<CartItem> ShoppingCartItems {get; set;}
         public DbSet<Cart> Cart {get; set;}
         public DbSet<Order> OrderList {get; set;}
+        public DbSet<ApiTest> ApiTest {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -52,8 +54,11 @@ namespace MvcStore.Data
 
             modelBuilder.Entity<Order>()
                 .HasKey(p => p.OrderId);
-                
 
+            modelBuilder.Entity<ApiTest>()
+                .HasKey(p => p.Id);
+                
+            base.OnModelCreating(modelBuilder);
             OnModelCreatingPartial(modelBuilder);
         }
 

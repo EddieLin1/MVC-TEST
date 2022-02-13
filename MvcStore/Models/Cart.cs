@@ -10,7 +10,7 @@ namespace MvcStore.Models
         [Key]
         public double CartId {get; set;}
         //public double SessionId{get; set;}
-        public Boolean Purchased {get; set;} = false;
+        public Boolean? Purchased {get; set;} = null;
         
         public double CartTotal{ get; set;}
         [NotMapped]

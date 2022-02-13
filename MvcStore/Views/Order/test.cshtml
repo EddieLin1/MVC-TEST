@@ -1,0 +1,73 @@
+@model MvcStore.Models.Cart
+
+<h1>Your Shopping Cart</h1>
+
+<p>
+    <form asp-action="ShopView">
+    <input type="submit" value="Shop For Items" class="btn btn-primary" /> 
+
+    </form>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Total Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ShoppingCart) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </th>
+            <th>
+                @(Math.Round(item.Quantity * item.item.Price, 2))
+            
+            </th>
+            <th>
+
+                <img src= @Url.Content(item.item.ImageURL) style="height : 50px;width : 65px;" >
+            </th>  
+            <td>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
+            </td>
+        </tr>
+}
+    
+    </tbody>
+    
+</table>

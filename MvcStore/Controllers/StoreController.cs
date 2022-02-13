@@ -10,12 +10,14 @@ namespace MvcStore.Controllers
         private readonly IItemRepository _Ritem;
         private readonly IShoppingCartItemsRepository _cart;
 
+        private readonly ICartRepository _cartPurch;
 
 
-        public StoreController(IItemRepository item, IShoppingCartItemsRepository cart)
+        public StoreController(IItemRepository item, IShoppingCartItemsRepository cart, ICartRepository cartpurch)
         {
             _Ritem = item;
             _cart = cart;
+            _cartPurch = cartpurch;
         }
 
         public IActionResult ShopView()
@@ -29,6 +31,7 @@ namespace MvcStore.Controllers
         public IActionResult Index()
         {
             var data =  _cart.GetAllCartItems();
+            data.CartTotal = data._CartTotal();
             return View(data);
         }
 
@@ -63,7 +66,7 @@ namespace MvcStore.Controllers
 
         } 
 
-        // POST: Pet/Create
+        // POST: Store/Create/{id}
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("CreateConfirmed")]
@@ -85,7 +88,7 @@ namespace MvcStore.Controllers
                 {
                     var item = _Ritem.GetRepoItemById(ItemId);
                     item.QuantitySold += Quantity;
-                    _cart.AddNew(item, Quantity);
+                    _cart.AddNew(item, Quantity, _cart.CurrentCartNum(_cartPurch.PurchaseCheckInit()));
                     _Ritem.SaveChanges();
                     _cart.SaveChanges();
                     return RedirectToAction(nameof(Index));
@@ -170,8 +173,8 @@ namespace MvcStore.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id, int Quantity)
         {
-            
-               var data = _cart.GetCartItemById(id); 
+            if(ModelState.IsValid){
+                 var data = _cart.GetCartItemById(id); 
                var itemdata = _Ritem.GetRepoItemById(id);
                if(itemdata.QuantitySold <= Quantity){
                    itemdata.QuantitySold -= itemdata.QuantitySold;
@@ -189,6 +192,14 @@ namespace MvcStore.Controllers
                }
                _cart.SaveChanges();
                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            } 
+
+            
+              
             
         }
          public IActionResult StockManage()

@@ -12,6 +12,8 @@ namespace MvcStore.Models
         ErrorMessage = "First Name should be minimum 3 characters and a maximum of 50 characters")]
         [DataType(DataType.Text)]
         public string FirstName  { get; set; }
+        [Column(TypeName = "nvarchar(450)")]
+        public string UserId {get; set;}
         [Required(ErrorMessage = "Last Name is required")]
         [StringLength(50, MinimumLength = 2,
         ErrorMessage = "First Name should be minimum 3 characters and a maximum of 50 characters")]
@@ -28,6 +30,7 @@ namespace MvcStore.Models
         [Required(ErrorMessage = "A Postal Code is required.")]
         [RegularExpression(@"^[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]$", ErrorMessage = "Invalid Phone Number.")]
         public string PostalCode { get; set; }
+        [Required(ErrorMessage = "A Country is required.")]
         public string Country    { get; set; }
         [Display(Name = "Phone Number:")]
         [Required(ErrorMessage = "A Phone number is required.")]
@@ -41,11 +44,9 @@ namespace MvcStore.Models
         public string Email      { get; set; }
         public int CartId {get; set;}
 
-        public double Total     { 
-            get{return OrderCart.CartTotal;}
-        }
-        [NotMapped]
-        public Cart OrderCart {get; set;}
+        public double Total {get; set;} = 0;
+            
+        
 
     }
 }

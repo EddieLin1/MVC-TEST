@@ -349,3 +349,12 @@ C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\s
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\store\StockManage.cshtml.g.cs
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Order\AdminDisplayOrders.cshtml.g.cs
 C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Order\OrderCreate.cshtml.g.cs
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Order\test.cshtml.g.cs
+C:\Users\edric\Desktop\Projects\MvcStore\MvcStore\obj\Debug\net5.0\Razor\Views\Shared\failed.cshtml.g.cs
