@@ -23,10 +23,18 @@ namespace MvcStore.Repo.ApiTestRepo
         
         public void addApiTest(ApiTest model){
             _context.ApiTest.Add(model);
+            SaveChanges();
         }
 
         public void updateApiTest(ApiTest model){
-             _context.ApiTest.Update(model);
+            var upd = _context.ApiTest.Find(model.Id);
+            upd.message = model.message;
+            if (upd != null) {
+                _context.ApiTest.Update(upd);
+            }else{
+                addApiTest(model);
+            }
+            SaveChanges();
         }
 
         public void deleteApiTest(int Id){
@@ -34,7 +42,11 @@ namespace MvcStore.Repo.ApiTestRepo
             if (del != null) {
                 _context.ApiTest.Remove(del);
             }
+            SaveChanges();
         }
 
+        public void SaveChanges(){
+            _context.SaveChanges();
+        } 
     }
 }
