@@ -54,7 +54,7 @@ namespace MvcStore.Controllers
             return View(pet);
         }
 */
-        // GET: Pet/Create
+        // GET: Store/Create
         public IActionResult Create(int id) //this page is not showing and i am not sure why
         {
             
@@ -156,7 +156,7 @@ namespace MvcStore.Controllers
             return View(pet);
         }
 */
-        // GET: Pet/Delete/5
+        // GET: Store/Delete/5
         public IActionResult Delete(int id)
         {
 
@@ -169,7 +169,7 @@ namespace MvcStore.Controllers
             return View(data);
         }
 
-        // POST: Pet/Delete/5
+        // POST: Store/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id, int Quantity)

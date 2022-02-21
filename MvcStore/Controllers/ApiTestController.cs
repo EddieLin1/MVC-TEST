@@ -8,7 +8,7 @@ using MvcStore.Interface.IApiTestInterface;
 // build a new sql database for testing
 // build new model and repository for testing
 // create CRUD operations for testing
-// build views for testing
+// displays and utilizes Json data for 
 namespace MvcStore.Controllers
 {
     [Produces("applications/json")]

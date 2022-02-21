@@ -19,6 +19,7 @@ namespace MvcStore.Controllers
         public IActionResult Register(){
             return View();
         }
+        
         [HttpPost]
         public async Task<IActionResult> RegisterConfirmed(RegisterUser model){
             if (ModelState.IsValid)
