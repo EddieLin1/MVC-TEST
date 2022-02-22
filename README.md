@@ -6,6 +6,7 @@
 > - MVC Architectural Pattern
 > - C#
 > - CRUD operations
+> - SQL Server
 #### More specifically, I used the following:
 > - Dependency injection
 > - Repository design pattern
