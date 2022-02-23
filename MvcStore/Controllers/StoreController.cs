@@ -36,24 +36,6 @@ namespace MvcStore.Controllers
             return View(data);
         }
 
-        /*// GET: Pet/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var pet = await _context.Pet
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (pet == null)
-            {
-                return NotFound();
-            }
-
-            return View(pet);
-        }
-*/
         // GET: Store/Create
         public IActionResult Create(int id) //this page is not showing and i am not sure why
         {
@@ -103,59 +85,7 @@ namespace MvcStore.Controllers
             
         }
         
-        
-/*
-        // GET: Pet/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var pet = await _context.Pet.FindAsync(id);
-            if (pet == null)
-            {
-                return NotFound();
-            }
-            return View(pet);
-        } 
-
-        // POST: Pet/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Desc")] Pet pet)
-        {
-            if (id != pet.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(pet);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PetExists(pet.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(pet);
-        }
-*/
         // GET: Store/Delete/5
         public IActionResult Delete(int id)
         {
@@ -209,10 +139,6 @@ namespace MvcStore.Controllers
             return View(data);
         }
 
-/*
-        private bool PetExists(int id)
-        {
-            return _context.Pet.Any(e => e.Id == id);
-        } */
+
     }
 }

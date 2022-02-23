@@ -17,10 +17,11 @@ namespace MvcStore.Repo
         }
         public Cart GetAllCartItems()
         {
+            //_cart.ShoppingCart = _context.ShoppingCartItems.Where(x => x.CartId == CurrentCartNum())
+            // _cart.ShoppingCart = _context.ShoppingCartItems.Where(j => j.CartId.Equals(2)).ToList();
             Cart _cart = new Cart();
-           // _cart.ShoppingCart = _context.ShoppingCartItems.Where(j => j.CartId.Equals(2)).ToList();
            _cart.ShoppingCart = _context.ShoppingCartItems.ToList();
-           //_cart.ShoppingCart = _context.ShoppingCartItems.Where(x => x.CartId == CurrentCartNum())
+           
                         //.ToList();
             populate(_cart);
             return _cart;

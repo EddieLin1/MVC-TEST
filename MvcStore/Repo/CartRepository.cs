@@ -33,6 +33,6 @@ namespace MvcStore.Repo
             
             return check.Purchased;
         }
-        // need to add adding cart after purchasing with order mangger type shit and selecting purchased etc
+        // need to add adding cart after purchasing with order mangger type and selecting purchased etc
     }
 }
