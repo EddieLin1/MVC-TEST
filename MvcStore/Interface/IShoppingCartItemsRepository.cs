@@ -7,7 +7,7 @@ namespace MvcStore.Interface
     public interface IShoppingCartItemsRepository
     {
        // Task<IEnumerable<Cart>> GetAllCartItemsAsync();
-        CartItem GetCartItemById(int id);
+        CartItem GetCartItemById(int id, int cartid);
         Cart GetAllCartItems(int id);
         void AddNew(Item item, int Quantity, int CartId);
         CartItem item2CartItem(Item item, int Quantity);
