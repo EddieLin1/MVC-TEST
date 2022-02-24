@@ -10,7 +10,7 @@ namespace MvcStore.Interface.IApiTestInterface
         void addApiTest(ApiTest model);
         void updateApiTest(ApiTest model);
         void deleteApiTest(int Id);
-
+        ApiTest GetApiTest(int id);
         void SaveChanges();
     }
 }

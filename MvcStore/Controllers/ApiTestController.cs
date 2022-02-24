@@ -25,6 +25,11 @@ namespace MvcStore.Controllers
         public ActionResult Index(){
             return Content("works");
         }
+        [Route("~/api/GetApiTest/{id}")]
+        [HttpGet]
+        public ActionResult GetApiTest(int Id){
+            return Json(_ApiTest.GetApiTest(Id));
+        }
 
         [Route("~/api/GetAllApiTest")]
         [HttpGet]
