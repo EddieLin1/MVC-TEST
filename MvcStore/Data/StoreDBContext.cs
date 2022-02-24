@@ -50,7 +50,7 @@ namespace MvcStore.Data
                 .HasKey(p => p.Id);
 
             modelBuilder.Entity<Cart>()
-                .HasKey(p => p.CartId);
+                .HasKey(p => p.Id);
 
             modelBuilder.Entity<Order>()
                 .HasKey(p => p.OrderId);

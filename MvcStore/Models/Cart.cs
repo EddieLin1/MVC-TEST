@@ -8,9 +8,10 @@ namespace MvcStore.Models
 {    public class Cart
     {
         [Key]
-        public double CartId {get; set;}
+        public int Id {get; set;}
+        public int CartId {get; set;}
         //public double SessionId{get; set;}
-        public Boolean? Purchased {get; set;} = null;
+        public Boolean Purchased {get; set;} = false;
         
         public double CartTotal{ get; set;}
         [NotMapped]

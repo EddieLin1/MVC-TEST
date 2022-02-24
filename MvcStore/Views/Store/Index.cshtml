@@ -72,7 +72,7 @@
     
 </table>
 <p>
-<a class="btn btn-success" asp-area="" asp-controller="Order" asp-action="OrderCreate" asp-route-model= "@Model.CartId" >Confirm Purchase</a> 
+<a class="btn btn-success" asp-area="" asp-controller="Order" asp-action="OrderCreate" asp-route-CartTotal= "@Model.CartTotal" asp-route-CartId= "@Model.CartId" >Confirm Purchase</a> 
 </p>
 <p>Your Session Total: $@(Math.Round(Model.CartTotal, 2))</p>
  

@@ -38,6 +38,8 @@ namespace MvcStore.Controllers
             _ApiTest.addApiTest(model);
         }
 
+        // update will create a new one if it does not detect
+
         [Route("~/api/UpdateApiTest")]
         [HttpPut]
         public void UpdateApiTest([FromBody]ApiTest model){

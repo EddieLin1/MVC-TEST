@@ -31,7 +31,6 @@ namespace MvcStore.Repo
         public void AddNew(Order order){
             _context.OrderList.Add(order);
         }
-
         
     }
 }

@@ -10,7 +10,7 @@ using MvcStore.Data;
 namespace MvcStore.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20220212230725_InitialCreate")]
+    [Migration("20220224170519_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -235,16 +235,21 @@ namespace MvcStore.Migrations
 
             modelBuilder.Entity("MvcStore.Models.Cart", b =>
                 {
-                    b.Property<double>("CartId")
-                        .HasColumnType("float");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
 
                     b.Property<double>("CartTotal")
                         .HasColumnType("float");
 
-                    b.Property<bool?>("Purchased")
+                    b.Property<bool>("Purchased")
                         .HasColumnType("bit");
 
-                    b.HasKey("CartId");
+                    b.HasKey("Id");
 
                     b.ToTable("Cart");
                 });
