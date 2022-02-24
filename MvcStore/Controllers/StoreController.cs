@@ -62,14 +62,14 @@ namespace MvcStore.Controllers
         {
             if(ModelState.IsValid)
             {   
-                
+                var data =  _cart.GetAllCartItems(_cartPurch.get_current_cartnum());
 
                 if (_cart.GetCartItemById(ItemId) != null)
                 {
                     var item = _Ritem.GetRepoItemById(ItemId); 
                     item.QuantitySold += Quantity;
                     _Ritem.SaveChanges();
-                    _cart.AddMore(ItemId, Quantity);
+                    _cart.AddMore(ItemId, Quantity, _cartPurch.get_current_cartnum());
                     _cart.SaveChanges();
                     return RedirectToAction(nameof(Index));
                 } 

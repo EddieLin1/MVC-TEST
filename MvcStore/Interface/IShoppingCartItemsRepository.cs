@@ -13,7 +13,7 @@ namespace MvcStore.Interface
         CartItem item2CartItem(Item item, int Quantity);
         void SaveChanges();
         void Remove(CartItem item);
-        void AddMore(int id, int Quantity);
+        void AddMore(int id, int Quantity, int _cartId);
         int CurrentCartNum();
 
 

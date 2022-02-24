@@ -10,7 +10,7 @@ using MvcStore.Data;
 namespace MvcStore.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20220224170519_InitialCreate")]
+    [Migration("20220224212316_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

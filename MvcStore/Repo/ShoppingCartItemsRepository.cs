@@ -53,8 +53,8 @@ namespace MvcStore.Repo
             _context.ShoppingCartItems.Add(data);
             _context.SaveChanges();
         }
-        public void AddMore(int id, int Quantity){
-            var data = _context.ShoppingCartItems.SingleOrDefault(j => j.ItemId == id);
+        public void AddMore(int id, int Quantity, int _cartId){
+            var data = _context.ShoppingCartItems.Where(x => x.CartId == _cartId).SingleOrDefault(j => j.ItemId == id);
             data.Quantity += Quantity;
             SaveChanges(); 
         }
