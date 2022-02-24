@@ -23,8 +23,8 @@ namespace MvcStore.Controllers
 
         [Route("~/api/GetAllApiTest")]
         [HttpGet]
-        public IEnumerable<ApiTest> GetAllApiTest(){
-            return _ApiTest.getAllApiTest();
+        public IActionResult GetAllApiTest(){
+            return Json(_ApiTest.getAllApiTest());
         }
 
         [Route("~/api/AddApiTest")]
