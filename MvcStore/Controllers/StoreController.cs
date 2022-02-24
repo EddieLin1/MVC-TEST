@@ -12,6 +12,7 @@ namespace MvcStore.Controllers
         private readonly IShoppingCartItemsRepository _cart;
 
         private readonly ICartRepository _cartPurch;
+        private int CartId {get; set;}
 
 
         public StoreController(IItemRepository item, IShoppingCartItemsRepository cart, ICartRepository cartpurch)
@@ -57,21 +58,23 @@ namespace MvcStore.Controllers
         public IActionResult CreateConfrimed(int ItemId, int Quantity)
         {
             if(ModelState.IsValid)
-            {
+            {   
+                //if (_cartPurch.get_cart)
+
                 if (_cart.GetCartItemById(ItemId) != null)
                 {
-                     var item = _Ritem.GetRepoItemById(ItemId); 
-                     item.QuantitySold += Quantity;
-                     _Ritem.SaveChanges();
-                      _cart.AddMore(ItemId, Quantity);
-                      _cart.SaveChanges();
-                      return RedirectToAction(nameof(Index));
+                    var item = _Ritem.GetRepoItemById(ItemId); 
+                    item.QuantitySold += Quantity;
+                    _Ritem.SaveChanges();
+                    _cart.AddMore(ItemId, Quantity);
+                    _cart.SaveChanges();
+                    return RedirectToAction(nameof(Index));
                 } 
                 else
                 {
                     var item = _Ritem.GetRepoItemById(ItemId);
                     item.QuantitySold += Quantity;
-                    _cart.AddNew(item, Quantity, _cart.CurrentCartNum(_cartPurch.PurchaseCheckInit()));
+                    _cart.AddNew(item, Quantity, _cart.CurrentCartNum(_cartPurch.PurchaseCheck(CartId)));
                     _Ritem.SaveChanges();
                     _cart.SaveChanges();
                     return RedirectToAction(nameof(Index));
@@ -133,12 +136,16 @@ namespace MvcStore.Controllers
               
             
         }
-         public IActionResult StockManage()
+        public IActionResult StockManage()
         {
             var data =  _Ritem.GetAllRepoItems();
             return View(data);
         }
 
+        public IActionResult test(){
+            var data = _cartPurch.get_current_cartnum().ToString();
+            return Content(data);
+        }
 
     }
 }

@@ -20,24 +20,14 @@ namespace MvcStore.Repo
             //_cart.ShoppingCart = _context.ShoppingCartItems.Where(x => x.CartId == CurrentCartNum())
             // _cart.ShoppingCart = _context.ShoppingCartItems.Where(j => j.CartId.Equals(2)).ToList();
             Cart _cart = new Cart();
-           _cart.ShoppingCart = _context.ShoppingCartItems.ToList();
+           //_cart.ShoppingCart = _context.ShoppingCartItems.ToList();
+           _cart.ShoppingCart = _context.ShoppingCartItems.Where(x => x.CartId == 0).ToList();
            
                         //.ToList();
             populate(_cart);
             return _cart;
         }
-        public int CurrentCartNum(bool? purchased_check) // need cart repo to verify if this is current cart num / not purchased yet or not thing
-        {
-            int _CartId = 0;   
-
-            if(purchased_check == false){
-                _CartId = _context.ShoppingCartItems.Max(x => x.CartId);
-            }else if(purchased_check == true){
-                _CartId = _context.ShoppingCartItems.Max(x => x.CartId) + 1;
-            }
-            
-            return _CartId;
-        }
+        
         public Cart test()
         {
             Cart _cart = new Cart();
@@ -87,6 +77,20 @@ namespace MvcStore.Repo
                 item.item = _context.ItemsRepo.Find(item.ItemId);
             }
         }
+
+        // will have check cart purchased, if true then max id + 1 else base
+        public int CurrentCartNum(bool purchased_check) // need cart repo to verify if this is current cart num / not purchased yet or not thing
+        {
+            
+            if(purchased_check){
+                return _context.ShoppingCartItems.Max(x => x.CartId) + 1;
+            }else
+            {
+                return _context.ShoppingCartItems.Max(x => x.CartId);
+            }
+            
+        }
+      
             
         }
  }

@@ -14,7 +14,7 @@ namespace MvcStore.Interface
         void SaveChanges();
         void Remove(CartItem item);
         void AddMore(int id, int Quantity);
-        int CurrentCartNum(bool? purchased_check);
+        int CurrentCartNum(bool purchased_check);
 
 
     }
