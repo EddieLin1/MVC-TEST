@@ -233,16 +233,21 @@ namespace MvcStore.Migrations
 
             modelBuilder.Entity("MvcStore.Models.Cart", b =>
                 {
-                    b.Property<double>("CartId")
-                        .HasColumnType("float");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
 
                     b.Property<double>("CartTotal")
                         .HasColumnType("float");
 
-                    b.Property<bool?>("Purchased")
+                    b.Property<bool>("Purchased")
                         .HasColumnType("bit");
 
-                    b.HasKey("CartId");
+                    b.HasKey("Id");
 
                     b.ToTable("Cart");
                 });

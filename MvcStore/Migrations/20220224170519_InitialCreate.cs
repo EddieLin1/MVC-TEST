@@ -63,13 +63,15 @@ namespace MvcStore.Migrations
                 name: "Cart",
                 columns: table => new
                 {
-                    CartId = table.Column<double>(type: "float", nullable: false),
-                    Purchased = table.Column<bool>(type: "bit", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CartId = table.Column<int>(type: "int", nullable: false),
+                    Purchased = table.Column<bool>(type: "bit", nullable: false),
                     CartTotal = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cart", x => x.CartId);
+                    table.PrimaryKey("PK_Cart", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(

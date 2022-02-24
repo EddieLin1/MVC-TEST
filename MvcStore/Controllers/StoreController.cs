@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MvcStore.Models;
 using MvcStore.Interface;
 
+using Newtonsoft.Json;
 
 namespace MvcStore.Controllers
 {
@@ -12,7 +13,7 @@ namespace MvcStore.Controllers
         private readonly IShoppingCartItemsRepository _cart;
 
         private readonly ICartRepository _cartPurch;
-        private int CartId {get; set;}
+
 
 
         public StoreController(IItemRepository item, IShoppingCartItemsRepository cart, ICartRepository cartpurch)
@@ -32,8 +33,10 @@ namespace MvcStore.Controllers
         // GET: Pet
         public IActionResult Index()
         {
-            var data =  _cart.GetAllCartItems();
+            var data =  _cart.GetAllCartItems(_cartPurch.get_current_cartnum());
             data.CartTotal = data._CartTotal();
+            data.CartId = _cartPurch.get_current_cartnum();
+           // _cartPurch.add_update_cart(data);
             return View(data);
         }
 
@@ -59,7 +62,7 @@ namespace MvcStore.Controllers
         {
             if(ModelState.IsValid)
             {   
-                //if (_cartPurch.get_cart)
+                
 
                 if (_cart.GetCartItemById(ItemId) != null)
                 {
@@ -74,7 +77,7 @@ namespace MvcStore.Controllers
                 {
                     var item = _Ritem.GetRepoItemById(ItemId);
                     item.QuantitySold += Quantity;
-                    _cart.AddNew(item, Quantity, _cart.CurrentCartNum(_cartPurch.PurchaseCheck(CartId)));
+                    _cart.AddNew(item, Quantity, _cartPurch.get_current_cartnum());
                     _Ritem.SaveChanges();
                     _cart.SaveChanges();
                     return RedirectToAction(nameof(Index));
@@ -136,6 +139,15 @@ namespace MvcStore.Controllers
               
             
         }
+        
+        public IActionResult OrderCreated(){
+            var data =  _cart.GetAllCartItems(_cartPurch.get_current_cartnum());
+            data.CartTotal = data._CartTotal();
+            data.CartId = _cartPurch.get_current_cartnum();
+            data.Purchased = true;
+            _cartPurch.add_cart(data);
+            return RedirectToAction(nameof(Index));
+        }
         public IActionResult StockManage()
         {
             var data =  _Ritem.GetAllRepoItems();
@@ -143,8 +155,10 @@ namespace MvcStore.Controllers
         }
 
         public IActionResult test(){
-            var data = _cartPurch.get_current_cartnum().ToString();
-            return Content(data);
+           // var model =  _cart.CurrentCartNum(_cartPurch.PurchaseCheck(_cartPurch.get_current_cartnum()));
+            //var model = JsonConvert.SerializeObject(_cart.CurrentCartNum(_cartPurch.PurchaseCheck(_cartPurch.get_current_cartnum())));
+            var model = 3;
+            return Content(JsonConvert.SerializeObject(model));
         }
 
     }

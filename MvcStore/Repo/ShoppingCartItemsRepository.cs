@@ -15,16 +15,16 @@ namespace MvcStore.Repo
         {
             _context = context;
         }
-        public Cart GetAllCartItems()
+        public Cart GetAllCartItems(int id)
         {
             //_cart.ShoppingCart = _context.ShoppingCartItems.Where(x => x.CartId == CurrentCartNum())
             // _cart.ShoppingCart = _context.ShoppingCartItems.Where(j => j.CartId.Equals(2)).ToList();
             Cart _cart = new Cart();
            //_cart.ShoppingCart = _context.ShoppingCartItems.ToList();
-           _cart.ShoppingCart = _context.ShoppingCartItems.Where(x => x.CartId == 0).ToList();
+           _cart.ShoppingCart = _context.ShoppingCartItems.Where(x => x.CartId == id).ToList();
            
                         //.ToList();
-            populate(_cart);
+            populate(_cart, id);
             return _cart;
         }
         
@@ -72,22 +72,32 @@ namespace MvcStore.Repo
         public void Remove(CartItem item){
             _context.ShoppingCartItems.Remove(item);
         }
-        public void populate(Cart Cart){
+        public void populate(Cart Cart, int id){
             foreach(CartItem item in Cart.ShoppingCart){
-                item.item = _context.ItemsRepo.Find(item.ItemId);
+                if (item.CartId == id){
+                    item.item = _context.ItemsRepo.Find(item.ItemId);
+                }
+                
             }
         }
 
         // will have check cart purchased, if true then max id + 1 else base
-        public int CurrentCartNum(bool purchased_check) // need cart repo to verify if this is current cart num / not purchased yet or not thing
+        public int CurrentCartNum() // need cart repo to verify if this is current cart num / not purchased yet or not thing
         {
-            
+            return _context.Cart.Max(x => x.CartId) + 1;
+            /*
             if(purchased_check){
-                return _context.ShoppingCartItems.Max(x => x.CartId) + 1;
+                return _context.Cart.Max(x => x.CartId) + 1;
             }else
             {
-                return _context.ShoppingCartItems.Max(x => x.CartId);
-            }
+                if (_context.ShoppingCartItems.FirstOrDefault() == null){
+                    return 0;
+                }
+                else{
+                    return _context.ShoppingCartItems.Max(x => x.CartId);
+                }
+                
+            } */
             
         }
       

@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="OrderCreateConfirmed" asp-route-CartId="@Model.CartId" asp-route-UserId="@User.Identity.Name">
+        <form asp-action="OrderCreateConfirmed" asp-route-Total= "@Model.Total" asp-route-CartId="@Model.CartId" asp-route-UserId="@User.Identity.Name">
         <input type="hidden" asp-for="OrderId" />
         <div class="form-group">
             <label asp-for="FirstName" class="control-label"></label>

@@ -8,6 +8,7 @@ namespace MvcStore.Models
 {    public class Cart
     {
         [Key]
+        public int Id {get; set;}
         public int CartId {get; set;}
         //public double SessionId{get; set;}
         public Boolean Purchased {get; set;} = false;
