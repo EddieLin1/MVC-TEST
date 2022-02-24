@@ -8,10 +8,11 @@ using MvcStore.Interface.IApiTestInterface;
 // build a new sql database for testing
 // build new model and repository for testing
 // create CRUD operations for testing
+// displays and utilizes Json data for 
 namespace MvcStore.Controllers
 {
     [Produces("applications/json")]
-    [Route("api/Test")]
+    [Route("api/[controller]")]
 
     public class ApiTestController : Controller
     {
@@ -21,21 +22,25 @@ namespace MvcStore.Controllers
             _ApiTest = ApiTest;
         }
 
+        public ActionResult Index(){
+            return Content("works");
+        }
+
         [Route("~/api/GetAllApiTest")]
         [HttpGet]
-        public IActionResult GetAllApiTest(){
+        public ActionResult GetAllApiTest(){
             return Json(_ApiTest.getAllApiTest());
         }
 
         [Route("~/api/AddApiTest")]
         [HttpPost]
-        public void AddApiTest(ApiTest model){
+        public void AddApiTest([FromBody]ApiTest model){
             _ApiTest.addApiTest(model);
         }
 
         [Route("~/api/UpdateApiTest")]
-        [HttpPost]
-        public void UpdateApiTest(ApiTest model){
+        [HttpPut]
+        public void UpdateApiTest([FromBody]ApiTest model){
             _ApiTest.updateApiTest(model);
         }
 

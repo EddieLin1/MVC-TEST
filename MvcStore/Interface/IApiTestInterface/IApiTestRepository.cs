@@ -11,6 +11,6 @@ namespace MvcStore.Interface.IApiTestInterface
         void updateApiTest(ApiTest model);
         void deleteApiTest(int Id);
 
-        
+        void SaveChanges();
     }
 }
