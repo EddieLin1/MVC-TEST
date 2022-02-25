@@ -34,8 +34,8 @@ The SQL server:
 <br>
 Postman Endpoints:
 <br>
-<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/img/postman_endpoints.PNG" alt="alt text" width="600" height="400">
+<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/img/postman_endpoints.PNG" alt="alt text" width="600" height="250">
 <br>
 Sample Postman Usage:
 <br>
-<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/img/postman.PNG" alt="alt text" width="600" height="400">
+<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/img/postman.PNG" alt="alt text" width="600" height="250">
