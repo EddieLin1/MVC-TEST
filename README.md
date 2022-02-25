@@ -31,3 +31,11 @@ This is what the front page looks like and subsequent buypage look like:
 The SQL server:
 <br>
 <img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/databse.PNG" alt="alt text" width="600" height="400">
+<br>
+Postman Endpoints:
+<br>
+<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/postman_endpoints.PNG" alt="alt text" width="600" height="400">
+<br>
+Sample Postman Usage:
+<br>
+<img src="https://raw.githubusercontent.com/EddieLin1/Superstore-ASP.NET-MVC/main/MvcStore/img/postman.PNG" alt="alt text" width="600" height="400">
