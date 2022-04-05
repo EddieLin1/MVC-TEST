@@ -28,7 +28,7 @@ namespace MvcStore.Models
         [Required(ErrorMessage = "Province/State is required")]
         public string State_Province  { get; set; }
         [Required(ErrorMessage = "A Postal Code is required.")]
-        [RegularExpression(@"^[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]$", ErrorMessage = "Invalid Phone Number.")]
+        [RegularExpression(@"^[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]$", ErrorMessage = "Invalid Postal Code.")]
         public string PostalCode { get; set; }
         [Required(ErrorMessage = "A Country is required.")]
         public string Country    { get; set; }

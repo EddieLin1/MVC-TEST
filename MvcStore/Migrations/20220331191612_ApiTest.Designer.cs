@@ -10,8 +10,8 @@ using MvcStore.Data;
 namespace MvcStore.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20220224212316_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220331191612_ApiTest")]
+    partial class ApiTest
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
