@@ -62,14 +62,14 @@ namespace MvcStore.Controllers
         {
             if(ModelState.IsValid)
             {   
-                
+                var data =  _cart.GetAllCartItems(_cartPurch.get_current_cartnum());
 
-                if (_cart.GetCartItemById(ItemId) != null)
+                if (_cart.GetCartItemById(ItemId, _cartPurch.get_current_cartnum()) != null)
                 {
                     var item = _Ritem.GetRepoItemById(ItemId); 
                     item.QuantitySold += Quantity;
                     _Ritem.SaveChanges();
-                    _cart.AddMore(ItemId, Quantity);
+                    _cart.AddMore(ItemId, Quantity, _cartPurch.get_current_cartnum());
                     _cart.SaveChanges();
                     return RedirectToAction(nameof(Index));
                 } 
@@ -96,7 +96,7 @@ namespace MvcStore.Controllers
         public IActionResult Delete(int id)
         {
 
-            var data = _cart.GetCartItemById(id);
+            var data = _cart.GetCartItemById(id, _cartPurch.get_current_cartnum());
             if (data == null)
             {
                 return NotFound();
@@ -111,7 +111,7 @@ namespace MvcStore.Controllers
         public IActionResult DeleteConfirmed(int id, int Quantity)
         {
             if(ModelState.IsValid){
-                 var data = _cart.GetCartItemById(id); 
+                 var data = _cart.GetCartItemById(id, _cartPurch.get_current_cartnum()); 
                var itemdata = _Ritem.GetRepoItemById(id);
                if(itemdata.QuantitySold <= Quantity){
                    itemdata.QuantitySold -= itemdata.QuantitySold;

@@ -15694,6 +15694,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Order\\DisplayOrders.cshtml",
+      "TargetPath": "Views\\Order\\DisplayOrders.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\edric\\Desktop\\Projects\\MvcStore\\MvcStore\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

@@ -37,9 +37,10 @@ namespace MvcStore.Controllers
             //return View("failed", order);
             //}
         }
-        public IActionResult DisplayOrder()
+        public IActionResult DisplayOrders()
         {
-            return View();
+            var orders = _OrderList.GetAllOrders();
+            return View(orders);
         }
         public IActionResult test(Cart model)
         {

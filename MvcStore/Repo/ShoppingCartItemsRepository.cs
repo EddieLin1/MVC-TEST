@@ -37,9 +37,9 @@ namespace MvcStore.Repo
             
             return _cart;
         }
-        public CartItem GetCartItemById(int id)
+        public CartItem GetCartItemById(int id, int cartId)
         {
-            var data = _context.ShoppingCartItems.FirstOrDefault(x => x.ItemId == id);
+            var data = _context.ShoppingCartItems.Where(x => x.CartId == cartId).FirstOrDefault(x => x.ItemId == id);
             if(data != null){
                 data.item = _context.ItemsRepo.Find(id);
             }
@@ -51,11 +51,12 @@ namespace MvcStore.Repo
             var data = item2CartItem(item, Quantity);
             data.CartId = _cartId;
             _context.ShoppingCartItems.Add(data);
-            _context.SaveChanges();
+            SaveChanges();
         }
-        public void AddMore(int id, int Quantity){
-            var data = _context.ShoppingCartItems.SingleOrDefault(j => j.ItemId == id);
+        public void AddMore(int id, int Quantity, int _cartId){
+            var data = _context.ShoppingCartItems.Where(x => x.CartId == _cartId).SingleOrDefault(j => j.ItemId == id);
             data.Quantity += Quantity;
+            _context.ShoppingCartItems.Update(data);
             SaveChanges(); 
         }
         

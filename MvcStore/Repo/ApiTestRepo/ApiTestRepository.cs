@@ -21,6 +21,10 @@ namespace MvcStore.Repo.ApiTestRepo
             return _context.ApiTest.ToList();
         }
         
+        public ApiTest GetApiTest(int id){
+            return _context.ApiTest.Find(id);
+        }
+        
         public void addApiTest(ApiTest model){
             _context.ApiTest.Add(model);
             SaveChanges();
